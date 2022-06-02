@@ -13,6 +13,10 @@
     border: solid purple 3px;
 }
 
-.current-forecast-container {
+.forecast-container {
     border: solid green 3px;
+}
+
+.two-box {
+    border: solid yellow 8px;
 }

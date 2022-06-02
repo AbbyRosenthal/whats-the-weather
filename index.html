@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/style.css" />
     <title>What's the Weather?</title>
 </head>
@@ -15,37 +17,44 @@
     </header>
 
 
-    <main class="flex-row justify-space-between">
-
-    <!--contains search form and list of cities to search-->
-        <div class="city-container">
-            <div class="col-12 col-md-8"></div>
-            <h3 class="card-header">Search for a City</h3>
-            <form id="city-form" class="card-body">
-                <label class="form-label" for="city">City</label>
-                <input name="City" placeholder="Minneapolis" id="city" type="text" autofocus="true"
-                    class="form-input" />
-                <button type="submit" class="btn">Search</button>
-            </form>
-            <h2 class="subtitle"><span id="city-search-term"></span></h2>
-        </div>
-
-        <!--Contains Current Selected City's Data-->
-        <div class="current-city-container">
-            <div class="col-12 col-md-8"></div>
-        <h3 class="card-header"></h3>
-        </div>
-
-      
-         <!--Contains Current Selected City's 5 day forecast-->
-         <div class="current-forecast-container">
-            <div class="col-12 col-md-8"></div>
-            <h3 class="card-header"></h3>
+    <main class="flex-row justify-space-between col">
+        <div class="row">
+            <!--contains search form and list of cities to search-->
+            <div class="city-container m-3">
+                <div class=""></div>
+                <h3 class="card-header">Search for a City</h3>
+                <form id="city-form" class="card-body">
+                    <label class="form-label" for="city">City</label>
+                    <input name="City" placeholder="Minneapolis" id="city" type="text" autofocus="true"
+                        class="form-input" />
+                    <button type="submit" class="btn">Search</button>
+                </form>
+                <h2 class="subtitle"><span id="city-search-term"></span></h2>
             </div>
-        
+        </div>
+        <div class="two-box row p-3 m-3">
+            <div class="row p-3">
+                <!--Contains Current Selected City's Data-->
+                <div class="current-city-container col-8">
+                    <div class=""></div>
+                    <h3 class="card-header">Weather for Current City</h3>
+                    <div id="current-city-form" class="card-body">
+                        <h2 class="subtitle"><span id="city-search-term"></span></h2>
+                    </div>
+                </div>
+            </div>
 
-
-
+            <div class="row p-3">
+                <!--Contains Current Selected City's 5 Day Forecast Data-->
+                <div class="forecast-container col-8">
+                    <div class=""></div>
+                    <h3 class="card-header">5 Day Forecast for Current City</h3>
+                    <div id="forecast-form" class="card-body">
+                        <h2 class="subtitle"><span id="city-search-term"></span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </main>
     <script src="./assets/js/script.js"></script>
