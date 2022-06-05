@@ -1,11 +1,15 @@
-var searchCityEl = document.querySelector("#city-input")
-var currentCityEl = document.querySelector("#current-city-form")
+var searchCityEl =  $('#city-input')
+var currentCityEl = document.getElementById("#current-city-form")
+var city;
+
+
 
 var formSubmitHandler = function (event) {
     //stops refreshing
+    console.log(searchCityEl)
     event.preventDefault();
-
-    var city = document.querySelector.searchCityEl.value.trim();
+    var city = searchCityEl.value().trim() 
+  
 
     if (city) {
         getCityWeather(city);
@@ -23,7 +27,12 @@ var getCityWeather = function (city) {
     //example with London plugged in
     var cityApi = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=974e7f7c498a1d90f5f12aeb4fe7e9e2";
     fetch(cityApi)
-    console.log("Function is running")
+    console.log(city)
+
+
+
+
+
     // fetch(cityApi)
     //     .then(function (response) {
     //         return response.json();
@@ -41,7 +50,7 @@ var getCityWeather = function (city) {
 
 
 getCityWeather();
-
+formSubmitHandler();
 
 
 
