@@ -1,15 +1,15 @@
-var searchCityEl =  $('#city-input')
+// var searchCityEl = document.querySelector("city-input")
 var currentCityEl = document.getElementById("#current-city-form")
 var city;
+var searchBtn = document.getElementById("searchBtn")
 
 
-
-var formSubmitHandler = function (event) {
-    //stops refreshing
-    console.log(searchCityEl)
+function formSubmitHandler(event) {
     event.preventDefault();
-    var city = searchCityEl.value().trim() 
-  
+    //get value from form
+    city = document.getElementById("city-input").value
+    console.log(city)
+
 
     if (city) {
         getCityWeather(city);
@@ -19,16 +19,14 @@ var formSubmitHandler = function (event) {
 };
 
 
+var getCityWeather = function () {
+    // var lon;
+    // var lat;
 
-var getCityWeather = function (city) {
-    var lon;
-    var lat;
-
-    //example with London plugged in
     var cityApi = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=974e7f7c498a1d90f5f12aeb4fe7e9e2";
     fetch(cityApi)
-    console.log(city)
-
+    console.log("yippee")
+}
 
 
 
@@ -45,13 +43,9 @@ var getCityWeather = function (city) {
     //         return fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + lat, "&lon=" + lon, "&exclude=minutely,hourly&units=imperial&appid=974e7f7c498a1d90f5f12aeb4fe7e9e2");
     //     }
     //     )
-}
 
 
-
-getCityWeather();
-formSubmitHandler();
-
+searchBtn.addEventListener("click", formSubmitHandler);
 
 
 
