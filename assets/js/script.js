@@ -10,7 +10,6 @@ function formSubmitHandler(event) {
     city = document.getElementById("city-input").value
     console.log(city)
 
-
     if (city) {
         getCityWeather(city);
     } else {
@@ -20,29 +19,37 @@ function formSubmitHandler(event) {
 
 
 var getCityWeather = function () {
-    // var lon;
-    // var lat;
 
     var cityApi = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=974e7f7c498a1d90f5f12aeb4fe7e9e2";
+    var response = fetch(cityApi)
+
     fetch(cityApi)
-    console.log("yippee")
+    .then(response)
+    console.log(response)
+
 }
 
 
 
 
-    // fetch(cityApi)
-    //     .then(function (response) {
-    //         return response.json();
-    //     }).then(function (data) 
 
-    //         //determines the city using lat and long from the search entered
-    //         lat = data.coord.lat;
-    //         lon = data.coord.lon
 
-    //         return fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + lat, "&lon=" + lon, "&exclude=minutely,hourly&units=imperial&appid=974e7f7c498a1d90f5f12aeb4fe7e9e2");
-    //     }
-    //     )
+
+
+
+
+// fetch(cityApi)
+//     .then(function (response) {
+//         return response.json();
+//     }).then(function (data) 
+
+//         //determines the city using lat and long from the search entered
+//         lat = data.coord.lat;
+//         lon = data.coord.lon
+
+//         return fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + lat, "&lon=" + lon, "&exclude=minutely,hourly&units=imperial&appid=974e7f7c498a1d90f5f12aeb4fe7e9e2");
+//     }
+//     )
 
 
 searchBtn.addEventListener("click", formSubmitHandler);
