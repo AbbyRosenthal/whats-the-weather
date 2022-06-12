@@ -4,6 +4,8 @@ var city;
 var searchBtn = document.getElementById("searchBtn")
 var lat;
 var lon;
+var uv;
+var uvEl;
 
 
 function formSubmitHandler(event) {
@@ -28,8 +30,8 @@ var getCityWeather = function () {
         response.json().then(function (data) {
             console.log(data)
             displayCurrentWeather(data)
-            lat = data.coord.lat
-            lon = data.coord.lon
+            // lat = data.coord.lat
+            // lon = data.coord.lon
         })
     })
 }
@@ -41,10 +43,13 @@ var displayCurrentWeather = function (data) {
     var temp = data.main.temp
     var humidity = data.main.humidity
     var wind = data.wind.speed
-    
     var currentTempDiv = document.getElementById("showCurrentWeather")
     var heading = document.createElement("h3")
+    heading.classList = "heading"
+    //NOT FUNCTIONING
+    // var weatherIcon = document.createElement("img")
     // var iconUrl = "https://openweathermap.org/img/w/" + data.current.weather[0].icon + ".png";
+    // weatherIcon.setAttribute("src", iconUrl)
     // var iconDescription = data.current.weather[0].description;
     heading.innerHTML = "The current temperature in " + city + " is " + temp + " degrees. " + "<br>" + " Humidity is " + humidity + " % " + " <br> " + " Wind Speed is " + wind + " mph. "
     currentTempDiv.appendChild(heading);
@@ -77,35 +82,44 @@ function displayFiveDayWeather(data) {
         var humidity = data.daily[i].humidity
         var windSpeed = data.daily[i].wind_speed
         var temp = data.daily[i].temp.day
+        var uv = data.daily[i].uvi
         var dayDiv = document.createElement("div")
+        dayDiv.classList = ("card-body bg-dark text-white m-5 p-2")
         var dayDate = document.createElement("h3")
         dayDate.innerHTML = dayjs.unix(date).format('M/D/YYYY');
         var humiditiyEL = document.createElement("p")
-        humiditiyEL.innerHTML = "Humidity: " + humidity + "%" 
+        humiditiyEL.innerHTML = "Humidity: " + humidity + "%"
         var windSpeedEl = document.createElement("p")
         windSpeedEl.innerHTML = "Wind Speed: " + windSpeed + " mph "
         var tempEl = document.createElement("p")
         tempEl.innerHTML = "Temp: " + temp + " °F"
+        var uvEL = document.createElement("p")
+        uvEL.innerHTML = "UV Index: " + uv
         var weatherIcon = document.createElement("img")
         var forecastIconUrl = "https://openweathermap.org/img/w/" + data.daily[i].weather[0].icon + ".png";
         weatherIcon.setAttribute("src", forecastIconUrl)
         var forecastIconDescription = data.daily[i].weather[0].description;
-        dayDiv.append(dayDate, humiditiyEL, windSpeedEl, tempEl, forecastIconDescription, weatherIcon);
+        dayDiv.append(dayDate, humiditiyEL, windSpeedEl, tempEl, uvEL, forecastIconDescription, weatherIcon);
         fiveDayTempDiv.appendChild(dayDiv);
+
     }
+    // displaySearchHistory(city);
 }
 
 
-//  //dispaly search history
-//  var displaySearchHistory = function (city) {
-//     var showHistory = document.getElementById("searchHistory");
-// var historyButton = document.createElement("button")
-//     showHistory.innerHTML = city
 
-// };
-// displaySearchHistory
 
-//icon and icon description (data.weather)
+
+// //  //display search history ** RUNS but doesn't display the search
+// function displaySearchHistory(city) {
+//     localStorage.setItem(city)
+//     localStorage.getItem(city)
+//     var searchHistoryEl = document.getElementById("searchHistory")
+//     var buttonEl = document.createElement("div")
+//     buttonEl.textContent = "city"
+//     searchHistoryEl.appendChild(buttonEl)
+
+// }
 
 
 

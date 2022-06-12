@@ -1,33 +1,7 @@
 ## Decription
-
+This project uses Open Weather API to display current and future weather for cities typed in the search box.  The future forecast displays temp, wind speed, humitity and uv index, as well as an icon and description of the icon.  
 
 
 ## Screenshot
-
+![alt text](Screen%20Shot%202022-06-12%20at%207.10.58%20AM.png)
 ## Live URL
-
-
-   <div class="two-box row p-3 m-3">
-            <div class="row p-3">
-                <!--Contains Current Selected City's Data-->
-                <div class="current-city-container col-8">
-                    <div class=""></div>
-                    <h3 class="card-header">Weather for Current City</h3>
-                    <div id="current-city-form" class="card-body">
-                        <h2 class="subtitle"><span id="city-search-term"></span></h2>
-                    </div>
-                </div>
-            </div>
-
-
-                <div class="row p-3">
-                <!--Contains Current Selected City's 5 Day Forecast Data-->
-                <div class="forecast-container col-8">
-                    <div class=""></div>
-                    <h3 class="card-header">5 Day Forecast for Current City</h3>
-                    <div id="forecast-form" class="card-body">
-                        <h2 class="subtitle"><span id="city-search-term"></span></h2>
-                    </div>
-                </div>
-            </div>
-        </div>

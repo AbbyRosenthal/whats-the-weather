@@ -11,15 +11,18 @@
     padding: 5px;
 }
 
-.current-city-container {
-    border: solid purple 3px;
+.heading {
+    border: solid black 4px;
 }
 
-.forecast-container {
-    border: solid green 3px;
+.high {
+    color: red;
 }
 
-.two-box {
-    border: solid yellow 8px;
+.moderate {
+    color: orange;
 }
 
+.low {
+    color: green;
+}
