@@ -1,5 +1,5 @@
 ## Decription
-This project uses Open Weather API to display current and future weather for cities typed in the search box.  The future forecast displays temp, wind speed, humitity and uv index, as well as an icon and description of the icon.  
+This project uses Open Weather API to display current and future weather for cities typed in the search box.  The future forecast displays temp, wind speed, humitity and uv index, as well as an icon and description of the icon.  I was unable to get a functioning search history deployed to the page. 
 
 
 ## Screenshot

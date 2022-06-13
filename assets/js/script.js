@@ -110,7 +110,7 @@ function displayFiveDayWeather(data) {
 
 
 
-// //  //display search history ** RUNS but doesn't display the search
+// //  //display search history ** FUNCTION RUNS but doesn't display the search
 // function displaySearchHistory(city) {
 //     localStorage.setItem(city)
 //     localStorage.getItem(city)
